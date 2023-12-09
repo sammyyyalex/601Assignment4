@@ -2,10 +2,23 @@
 <html>
 <head>
 	<meta charset=“utf-8”>
-	<title>First App</title>
+	<title>Tip Calculator</title>
 </head>
 <body>
-	<h1>Hello this is index.html!</h1>
+	<!--<h1>Hello this is index.html!</h1>
 	{{insert_me}}
+	-->
+	<h3>Calculate Tip</h3>
+	<p>Go to <a href="http://127.0.0.1:8000/calculate_tip/">this URL</a> to access the form</p>
+	{% if totalAmount %}
+        <p>Total Amount: ${{ totalAmount }}</p>
+    {% endif %}
+
+	<form method="post" action="{% url 'calculate_tip' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Calculate</button>
+    </form>
+
 </body>
 </html>
