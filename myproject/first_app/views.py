@@ -4,8 +4,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 class BillForm(forms.Form):
-    subtotal = forms.DecimalField(label='Subtotal')
-    tipPercentage = forms.DecimalField(label='Tip Percentage')
+    subtotal = forms.DecimalField(label='Subtotal',widget=forms.TextInput(attrs={'placeholder': 'Enter subtotal'}))
+    tipPercentage = forms.DecimalField(label='Tip Percentage',widget=forms.TextInput(attrs={'placeholder': 'Enter tip percentage'}))
 
 def calculate_tip(request):
     if request.method == 'POST':
