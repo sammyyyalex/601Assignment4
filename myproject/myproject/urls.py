@@ -22,7 +22,7 @@ from first_app import views
 from first_app.views import calculate_tip
 
 urlpatterns = [
-    #path('', views.index, name='index'),
+    path('', views.index, name='index'),
     #path('', views.calculate_tip, name='calculateTip'),
     path('calculate_tip/', calculate_tip, name='calculate_tip'),
     path('admin/', admin.site.urls),

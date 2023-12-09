@@ -19,8 +19,8 @@ def calculate_tip(request):
     else:
         form = BillForm()
 
-    return render(request, 'first_app/index.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
 
-#def index(request):
-#    my_dict = {'insert_me':"Hello I am from views.py!"}
-#    return render (request, 'index.html', context=my_dict)
+def index(request):
+   my_dict = {'insert_me':"Hello I am from views.py!"}
+   return render (request, 'index.html', context=my_dict)
